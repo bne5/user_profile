@@ -1,9 +1,12 @@
 import React from 'react';
+import User from './User';
+import UserForm from './UserForm';
 
 const UserProfile = () => (
-  <div>
-    User Profile
-  </div>
+  <>
+    <User />
+    <UserForm />
+  </>
 )
 
 export default UserProfile;
