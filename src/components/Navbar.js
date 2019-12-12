@@ -2,6 +2,7 @@ import React from 'react';
 import { Menu, } from 'semantic-ui-react';
 import { NavLink, } from 'react-router-dom';
 import { UserConsumer, } from '../providers/UserProvider';
+//example wo context hook
 
 const Navbar = () => (
   <UserConsumer>

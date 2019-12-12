@@ -1,33 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card, } from 'semantic-ui-react';
-import { UserConsumer, } from '../providers/UserProvider';
+import { UserContext, } from '../providers/UserProvider';
 
 
-const User = () => (
-  <UserConsumer>
-    { upValue => (
-      <Card>
-      <Card.Content>
-        <Card.Header>
-          { upValue.username }
-        </Card.Header>
-        <Card.Header>
-          { upValue.firstName }
-        </Card.Header>
-        <Card.Header>
-          { upValue.lastName }
-        </Card.Header>
-        <Card.Meta>
-          { upValue.email }
-        </Card.Meta>
-        <Card.Meta>
-          { upValue.hobbies }
-        </Card.Meta>
-      </Card.Content>
-    </Card>
-    )}
-  </UserConsumer>
-)
+const User = () => {
+  const user = useContext(UserContext);
+
+return (
+  <Card>
+    <Card.Content>
+      <Card.Header>
+        { user.username }
+      </Card.Header>
+      <Card.Header>
+        { user.firstName }
+      </Card.Header>
+      <Card.Header>
+        { user.lastName }
+      </Card.Header>
+      <Card.Meta>
+        { user.email }
+      </Card.Meta>
+      <Card.Meta>
+        { user.hobbies }
+      </Card.Meta>
+    </Card.Content>
+  </Card>
+  );
+};
 
 export default User;
 
